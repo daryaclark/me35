@@ -12,13 +12,13 @@ class PublisherNode(Node):
     def publish_velocities(self):
         twist = Twist()
         # Set the linear velocity
-        linVelocity = input('Enter a linear velocity (float): ') 
-        twist.linear.x = float(linVelocity)
+        linDist = input('Enter a linear velocity (float): ') 
+        twist.linear.x = float(linDist)
         print(twist.linear.x)
         
         # Set the angular velocity
-        angVelocity = input('Enter an angular velocity (float): ')
-        twist.angular.z = float(angVelocity)
+        angDist = input('Enter an angular velocity (float): ')
+        twist.angular.z = float(angDist)
         print(twist.angular.z)
         
         contVal = input('Continue? ')
