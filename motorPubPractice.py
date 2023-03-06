@@ -36,25 +36,23 @@ class PublisherNode(Node):
 def main(args=None):
     
     rclpy.init(args=args)
-    
     node1 = PublisherNode()
+    
     try:
-        
+    
         loop = True
 
         while loop:
-
+            # run function to move robot
             cont = node1.publish_velocities()
 
             if cont == False:
-
+                # cleans up node if not continuing 
                 node1.destroy_node()
                 rclpy.shutdown()
                 
                 loop = False
 
-        # PublisherNode.destroy_node()
-        # rclpy.shutdown()
     except KeyboardInterrupt:
         print('\nCaught Keyboard Interrupt')
 
